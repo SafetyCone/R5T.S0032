@@ -1,59 +1,41 @@
 using System;
-using System.Threading;
 using System.Threading.Tasks;
 
-using Microsoft.Extensions.Hosting;
-
-using R5T.Plymouth;
-using R5T.Plymouth.ProgramAsAService;
+using R5T.N0001.Generation.Initial.Simple;
 
 
 namespace R5T.S0032
 {
-    class Program : ProgramAsAServiceBase
+    class Program
     {
-        #region Static
-        
         static Task Main()
         {
-        
-            return ApplicationBuilder.Instance
-                .NewApplication()
-                .UseProgramAsAService<Program>()
-                .UseT0027_T009_TwoStageStartup<Startup>()
-                .BuildProgramAsAServiceHost()
-                .Run();
+            //Program.WriteSpace();
+            Program.WriteInterface();
+
+            return Task.CompletedTask;
         }
 
-        #endregion
+#pragma warning disable IDE0051 // Remove unused private members
 
-
-                        private IServiceProvider ServiceProvider { get; }
-        
-
-
-                        public Program(IApplicationLifetime applicationLifetime,
-            IServiceProvider serviceProvider)
-            : base(applicationLifetime)
+        static void WriteInterface()
         {
-        
-            this.ServiceProvider = serviceProvider;
+            var interfaceTypeName = "ISolutionFileSetContextProvider";
+
+            var @interface = Instances.SyntaxGenerator.Interface(interfaceTypeName);
+
+            @interface.WriteToExampleCodeFilePath();
         }
 
-                protected override Task ServiceMain(CancellationToken stoppingToken)
+        /// <summary>
+        /// Writes a space to a code file.
+        /// This is a first hello-world level program to test out this methodology for creating functionality.
+        /// </summary>
+        static void WriteSpace()
         {
-        
-            return this.RunOperation();
-        }
+            var space = Instances.SyntaxGenerator.Space();
 
-                private async Task RunOperation()
-        {
-        
-        }
-
-                private async Task RunMethod()
-        {
-        
+            space.WriteToExampleCodeFilePath();
         }
     }
 }

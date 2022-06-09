@@ -1,0 +1,7 @@
+R5T.S0032.F001 - Functionality to write syntax elements to an example code file.
+
+
+Allowed Dependencies:
+
+* R5T.T0132 - FunctionalityMarker attribute and interface.
+* R5T.X0005 - Syntax element extensions for writing to a file.

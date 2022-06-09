@@ -1,3 +1,18 @@
-R5T.S0032 - Context-less code syntax element creation.
+R5T.S0032 - Generation, initial, simple, scripts for code syntax elements. Useful for quickly examining how syntax elements are created.
 
-GOALS:
+
+Mission: This script is *only* for simply creating syntax elements, without contexts, without services, without annotations.
+
+This script allows easy experimentation with how Roslyn syntax generation works.
+
+
+Allowed dependencies:
+
+* R5T.B0006.X0001 - Generation, initial, simple extensions to ISyntaxGenerator.
+* R5T.F0004 - Generation, initial, simple, functionality for Roslyn syntax elements.
+* R5T.X0005 - Extensions for Roslyn syntax functionality (non-generation).
+
+* R5T.Magyar - .NET C# language extensions.
+
+* R5T.S0032.Lib
+* R5T.S0032.F001 - Functionality to write syntax elements to an example code file.

@@ -1,3 +1,1 @@
-R5T.S0032.Lib - Context-less code syntax element creation.
-
-GOALS:
+R5T.S0032.Lib - Initial, simple, generation of code syntax elements. Useful for quickly examining how syntax elements are created.
